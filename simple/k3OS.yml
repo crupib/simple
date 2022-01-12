@@ -1,0 +1,23 @@
+- github:srobroek
+write_files:
+- path: /var/lib/connman/default.config
+  content: |-
+    [service_eth0]
+    Type=ethernet
+    IPv4=172.21.3.3/255.255.255.0/172.21.3.1
+    IPv6=off
+    Nameservers=172.20.11.9
+    SearchDomains=int.vxsan.com
+    Domain=int.vxsan.com
+    TimeServers=pool.ntp.org
+hostname: k3oscl01m01
+
+k3os:
+
+
+  k3sArgs:
+    - server
+    - --cluster-init
+    - --tls-san=cl01-k3s.int.vxsan.com
+    - --flannel-backend=host-gw
+Now we'll go through this file section by section:
