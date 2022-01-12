@@ -1,16 +1,16 @@
-- github:srobroek
+- github:crupib
 write_files:
 - path: /var/lib/connman/default.config
   content: |-
     [service_eth0]
     Type=ethernet
-    IPv4=172.21.3.3/255.255.255.0/172.21.3.1
+    IPv4=192.168.99.170/255.255.255.0/192.168.99.1
     IPv6=off
-    Nameservers=172.20.11.9
-    SearchDomains=int.vxsan.com
-    Domain=int.vxsan.com
+    Nameservers=192.168.133.10
+    SearchDomains=jcudev.corp
+    Domain=jcudev.corp
     TimeServers=pool.ntp.org
-hostname: k3oscl01m01
+hostname: k30sjcu
 
 k3os:
 
